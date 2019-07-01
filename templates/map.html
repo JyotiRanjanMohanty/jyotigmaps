@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sample App For MAPS</title>
+  </head>
+  <body>
+    <h1> My Google Map app Using Python </h1> 
+	{% extends "main.html" %}
+    {% block content %}
+    <p> Google Map is Fun </p>
+	<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+  center: {lat: 12.9716, lng: 77.5946},
+  zoom:10,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCU32vawu-_sfE8SvMtLL_eGvTDRNEQyc&callback=myMap"></script>
+   {% endblock %} 
+  </body>
+</html>
